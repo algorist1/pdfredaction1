@@ -144,7 +144,8 @@ uploaded_files = st.file_uploader(
     "처리할 PDF 파일을 선택하세요. (여러 파일 선택 가능)",
     type="pdf",
     accept_multiple_files=True # 다중 파일 업로드 허용
-)if uploaded_files:
+)
+    if uploaded_files:
     count = len(uploaded_files)
     
     # Session State 초기화 (처리된 데이터를 저장하기 위함)
