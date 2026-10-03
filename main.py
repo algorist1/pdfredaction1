@@ -152,8 +152,10 @@ def process_pdf(uploaded_file):
 
         page.apply_redactions()
 
+    doc.set_metadata({})
+    doc.del_xml_metadata()
     output_buffer = io.BytesIO()
-    doc.save(output_buffer)
+    doc.save(output_buffer, garbage=4, clean=True, deflate=True)
     doc.close()
     output_buffer.seek(0)
     
